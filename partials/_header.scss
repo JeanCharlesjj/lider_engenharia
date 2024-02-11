@@ -13,9 +13,10 @@ header {
     gap: 40px;
 }
 
-a {
+.link {
     color: $white-normal;
     text-decoration: none;
+    font-size: 30px;
 }
 
 .header-link .link:hover {
@@ -32,7 +33,7 @@ a {
     }
 }
 
-.header-button {
+.header-button{
     border: 1px solid $white-normal;
     padding: 8px 24px;
     border-radius: 4px;
@@ -62,7 +63,7 @@ a {
 
         a{
             margin-top: 16px;
-            font-size: 36px;
+            font-size: 22px;
         }
     }
 
