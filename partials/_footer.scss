@@ -23,14 +23,21 @@ footer {
 }
 
 #footer_content {
-    background-color: var(--color-neutral-10);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    background-color:#10097f;
+    //display: grid;
+    //grid-template-columns: repeat(3, 2fr);
     padding: 3rem 3.5rem;
+    display: flex;
+    justify-content: space-around;
 }
 
-#footer_contacts h1 {
-    margin-bottom: 0.75rem;
+.footer_contacts {
+    h1 {
+        margin-bottom: 0.75rem;
+    }
+    img{
+        max-width: 200px;
+    }
 }
 
 #footer_social_media {
@@ -89,13 +96,13 @@ footer {
 }
 
 .footer-list .footer-link:hover {
-    color: #7f37c9;
+    color: #FFF;
 }
 
 #footer_copyright {
     display: flex;
     justify-content: center;
-    background-color: var(--color-neutral-0);
+    background-color: #000062;
     font-size: 0.9rem;
     padding: 1.5rem;
     font-weight: 100;
