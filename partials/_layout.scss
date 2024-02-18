@@ -5,22 +5,19 @@
 }
 
 // ------------- IMAGEM DE FUNDO
-
-.bg-home:before{
-    content: '';
-    display: block;
-    position: absolute;
-    background-image: linear-gradient(to bottom, rgba(33,17,156, 0.1), #06121e), url("../assets/background.jpg");
+.bg-home {
+    width: 100%;
+    height: 100vh !important;
+    background-image: linear-gradient(to bottom, rgba(32, 73, 236, 0.3), #06121e), url("../assets/background.jpg");
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
     z-index: -1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 0;
     opacity: 0.7;
 }
+
 // -------------
 
 // ------------- TEXTO CENTRAL DA PÁGINA
@@ -35,14 +32,14 @@
     justify-content: center;
     padding: 14px;
 
-    h1{
+    h1 {
         text-align: center;
         line-height: 150%;
         max-width: 940px;
         font-size: 46px;
     }
 
-    p{
+    p {
         text-align: center;
         margin: 14px 0;
     }
@@ -58,14 +55,15 @@
     margin: 14px 0;
 }
 
-.button-contact:hover{
+.button-contact:hover {
     animation: scaleButton 0.8s alternate infinite;
 }
 
 @keyframes scaleButton {
-    from{
+    from {
         transform: scale(1);
     }
+
     to {
         transform: scale(1.2);
     }
@@ -74,7 +72,7 @@
 @media screen and (max-width: 768px) {
     .hero {
         min-height: 60vh;
-    
+
         h1 {
             font-size: 34px;
             padding: 0 14px;
@@ -88,8 +86,8 @@
 }
 
 @media screen and (max-width: 480px) {
-    .hero h1{
-        font-size: 24px;        
+    .hero h1 {
+        font-size: 24px;
     }
 }
 
@@ -98,7 +96,14 @@
 // ------------- SOBRE 
 
 .about {
-    background-color: $primary-normal;
+    background-image: linear-gradient(to top, rgba(32, 73, 236, 0.1), #06121e),
+        linear-gradient(to bottom, rgba(32, 73, 236, 0.1), #06121e),
+        url("../assets/background-about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.7;
+
     overflow: hidden;
     color: $white-normal;
 }
@@ -115,7 +120,7 @@
     }
 }
 
-.about-content div{
+.about-content div {
     flex: 1;
 }
 
@@ -125,15 +130,15 @@
         margin-bottom: 24px;
     }
 
-    p{
+    p {
         margin-bottom: 14px;
         line-height: 150%;
         font-size: 25px;
     }
 }
 
-@media screen and (max-width: 768px){
-    .about-content{
+@media screen and (max-width: 768px) {
+    .about-content {
         flex-direction: column;
     }
 }
@@ -143,8 +148,17 @@
 // ------------- PROJETOS
 
 .projetos {
-    background-color: $white-normal;
-    color: $black-normal;
+    background-image: linear-gradient(to top, rgba(32, 73, 236, 0.1), #06121e),
+        linear-gradient(to bottom, rgba(32, 73, 236, 0.1), #06121e),
+        url("../assets/background-about.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    opacity: 0.7;
+
+    overflow: hidden;
+    color: $white-normal;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -153,6 +167,8 @@
 }
 
 .projetos-content {
+    background-attachment: fixed;
+
     h1 {
         text-transform: uppercase;
         text-align: center;
@@ -160,7 +176,7 @@
         margin-bottom: 14px;
     }
 
-    p{
+    p {
         line-height: 150%;
         margin-bottom: 14px;
         text-align: center;
@@ -168,24 +184,26 @@
     }
 }
 
-.construcoes{
-    display: flex;
+.construcoes {
+
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
     justify-content: center;
     align-items: center;
     gap: 16px;
     padding: 0 44px 34px 44;
 }
 
-.construcao{
+.construcao {
     flex: 1;
     display: flex;
     flex-direction: column;
     background-color: $white-normal;
     border-radius: 8px;
-    box-shadow: 0px -1px 17px -4px rgba(0,0,0, 0.45);
+    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
 
     overflow: hidden;
-    
+
     img {
         width: 100%;
         max-width: 354px;
@@ -216,9 +234,23 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .construcoes {
         flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .construcao {
+        max-width: 740px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .construcoes {
+        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
     }
 
     .construcao {
@@ -248,7 +280,7 @@
         margin-bottom: 14px;
     }
 
-    p{
+    p {
         line-height: 150%;
         margin-bottom: 14px;
         text-align: center;
@@ -262,10 +294,10 @@
     flex-direction: column;
     background-color: $white-normal;
     border-radius: 8px;
-    box-shadow: 0px -1px 17px -4px rgba(0,0,0, 0.45);
+    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
 
     overflow: hidden;
-    
+
     video {
         width: 100%;
         max-width: 354px;
@@ -293,7 +325,7 @@
 
 // -------------
 
-// ------------- SLIDER
+// ------------- FEEDBACK IMPERATRIZ
 
 .feedback-imperatriz {
     background-color: #fff;
@@ -338,7 +370,7 @@
     }
 }
 
-.manual-navigation{
+.manual-navigation {
     position: absolute;
     width: 800px;
     margin-top: -40px;
@@ -354,23 +386,23 @@
     transform: 1s;
 }
 
-.manual-btn:not(:last-child){
+.manual-btn:not(:last-child) {
     margin-right: 40px;
 }
 
-.manual-btn:hover{
+.manual-btn:hover {
     background-color: #fff;
 }
 
-#radio1:checked ~ .first{
+#radio1:checked~.first {
     margin-left: 0;
 }
 
-#radio2:checked ~ .first{
+#radio2:checked~.first {
     margin-left: -25%;
 }
 
-#radio3:checked ~ .first{
+#radio3:checked~.first {
     margin-left: -50%;
 }
 
@@ -381,7 +413,7 @@
     display: flex;
     justify-content: center;
 
-    div{
+    div {
         border: 2px solid #fff;
         padding: 5px;
         border-radius: 10px;
@@ -390,18 +422,28 @@
     }
 }
 
-.navigation-auto div:not(:last-child){
+@media screen and (max-width: 768px) {
+    .feedback-imperatriz {
+        flex-direction: column;
+    }
+
+    .slider {
+        max-width: 460px;
+    }
+}
+
+.navigation-auto div:not(:last-child) {
     margin-right: 40px;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
+#radio1:checked~.navigation-auto .auto-btn1 {
     background-color: #FFF;
 }
 
-#radio2:checked ~ .navigation-auto .auto-btn2{
+#radio2:checked~.navigation-auto .auto-btn2 {
     background-color: #FFF;
 }
 
-#radio3:checked ~ .navigation-auto .auto-btn3{
+#radio3:checked~.navigation-auto .auto-btn3 {
     background-color: #FFF;
 }
